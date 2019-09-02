@@ -41,7 +41,6 @@ counter++;
 
   function testForDisplayAllNotes(){
     let testNote = new Note();
-
     const noteList = new NoteList();
     noteList._noteArray = [testNote];
     assert.isTrue(noteList.displayAllNotes()[0] == testNote);
@@ -50,16 +49,30 @@ counter++;
   function testForCreateNewNote(){
     const testString = "Favourite drink: seltzer"
     const noteList = new NoteList();
-
     noteList.createNewNote(testString);
-
     assert.isTrue(noteList.displayAllNotes()[0]._text == testString);
   }
 
+  function testForNoteListView(){
+    const noteOne = {
+      _text: "string 1"
+    }
+    const noteTwo= {
+      _text: "string 2"
+    }
+    const noteList = {
+      noteArray: [noteOne, noteTwo]
+    }
+
+    const noteListView = new NoteListView();
+    const result = noteListView.createView();
+    assert.isTrue(result == "<ul><li><div>string 1</div></li><li><div>string 2</div></li></ul>");
+  }
   exports.testForExistanceOfText = testForExistanceOfText;
   exports.testForDisplayNote = testForDisplayNote;
   exports.testForDisplayAllNotes = testForDisplayAllNotes;
   exports.testForCreateNewNote = testForCreateNewNote;
+  exports.testForNoteListView = testForNoteListView;
 })(this);
 
 testForExistanceOfText();
@@ -69,4 +82,6 @@ counter++;
 testForDisplayAllNotes();
 counter++;
 testForCreateNewNote();
+counter++;
+testForNoteListView();
 counter++;
