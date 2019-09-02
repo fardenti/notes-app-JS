@@ -15,6 +15,13 @@ A frontend, single page app using only pure JavaScript
 
 ```
 As a programmer
+I would like to create a note
+so I can store them
+
+
+examples:
+
+As a programmer
 I can see a list of my notes, where each note is abbreviated to the first 20 characters
 So I can find the one I want
 ```
