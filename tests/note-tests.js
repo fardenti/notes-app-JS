@@ -6,7 +6,7 @@ var counter = 1;
       if (!assertionToCheck) {
         throw new Error ("Assertion failed: " + assertionToCheck + " is not truthy");
       } else {
-        console.log(counter + " test passed");
+        console.log(counter + " test passed " + assertionToCheck);
       }
     }
   }
