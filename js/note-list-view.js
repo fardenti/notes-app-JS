@@ -1,7 +1,6 @@
 (function(exports){
-  function NoteListView(){
-    this._noteList = new NoteList();
-    
+  function NoteListView(notelistArray){
+    this._noteList = notelistArray;
   }
 
   NoteListView.prototype.createView = function(){
@@ -9,7 +8,5 @@
     let htmlArray = "<ul>" + array + "</ul>"
     return htmlArray
   }
-
-
   exports.NoteListView = NoteListView;
 })(this);

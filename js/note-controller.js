@@ -1,16 +1,20 @@
 (function(exports){
-  function GetAppDiv(){
- 
+  function NoteController(list = new NoteList){
+    this._notelist = list;
+   
+  }
+   
+
+  NoteController.prototype.changeText = function(){
+    this._notelist.createNewNote("Favourite drink: seltzer");
+    let view = new NoteListView(this._notelist)
+    let element = document.getElementById('app');
+    element.innerHTML = view.createView();
   }
 
-  GetAppDiv.prototype.displayHTML = function(){
-    var elem = document.getElementById('app');
-    elem.innerHTML = "howdy";
-    console.log(elem);
-  }
- 
-GetAppDiv.prototype.displayHTML();
-
-exports.GetAppDiv = GetAppDiv;
+exports.NoteController = NoteController;
 })(this);
+
+var ctrl = new NoteController()
+ctrl.changeText();
 

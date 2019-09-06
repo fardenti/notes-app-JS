@@ -47,16 +47,22 @@ counter++;
   }
 
   function testForNoteListView(){
-    const noteListView = new NoteListView();
+    const list = new NoteList();
+    const noteListView = new NoteListView(list);
     noteListView._noteList.createNewNote("string 1");
     noteListView._noteList.createNewNote("string 2");
     const result = noteListView.createView();
     assert.isTrue(result == "<ul><li><div>string 1</div></li><li><div>string 2</div></li></ul>");
   }
+
+  // function testForNoteController(){
+    
+  // }
   exports.testForExistanceOfText = testForExistanceOfText;
   exports.testForDisplayNote = testForDisplayNote;
   exports.testForCreateNewNote = testForCreateNewNote;
   exports.testForNoteListView = testForNoteListView;
+  // exports.testForNoteController = testForNoteController;
 })(this);
 
 testForExistanceOfText();
@@ -67,3 +73,5 @@ testForCreateNewNote();
 counter++;
 testForNoteListView();
 counter++;
+// testForNoteController();
+// counter++;
