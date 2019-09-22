@@ -4,9 +4,9 @@ A frontend, single page app using only pure JavaScript
 
 ### Concepts
 
-* Frontend, [single page](https://msdn.microsoft.com/en-gb/magazine/dn463786.aspx) web apps.
+* Frontend, single page web apps.
 * Events and event handlers.
-* Manipulating the [Document Object Model (DOM)](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction).
+* Manipulating the Document Object Model (DOM)
 * Ajax.
 * Frontend templating.
 * Frontend routing.
@@ -14,12 +14,6 @@ A frontend, single page app using only pure JavaScript
 # Notes app user stories
 
 ```
-As a programmer
-I would like to create a note
-so I can store them
-
-
-examples:
 
 As a programmer
 I can see a list of my notes, where each note is abbreviated to the first 20 characters
