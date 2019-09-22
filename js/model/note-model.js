@@ -6,5 +6,7 @@
   Note.prototype.displayNote = function(){
     return this._text;
   }
+
+
   exports.Note = Note;
 })(this);

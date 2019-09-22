@@ -62,7 +62,7 @@ counter++;
     notelistview = new NoteListView(notelist);
     notelistview.createView();
     notecontroller = new NoteController(notelist);
-    result = notecontroller.changeText();
+    const result = notecontroller.changeText();
     console.log(result)
     //assert.isTrue(result == "<ul><li><div>Favourite drink: seltzer</div></li></ul>");
   }
@@ -75,18 +75,31 @@ counter++;
     notelistview.createView();
     notecontroller = new NoteController(notelist);
     notecontroller.changeText();
-    s = new SingleNoteView(note);
-    console.log(s)
-    result = s.returnHTML();
-    console.log(result)
+    singlenote = new SingleNoteView(note);
+    console.log(singlenote);
+    const result = singlenote.returnHTML();
+    console.log(result);
     assert.isTrue(result == "<div>new note</div>");
   }
+
+  function testForNoteId(){
+    note = new Note("note new to check id");
+    notelist = new NoteList();
+    notelist.createNewNote(note._text);
+    notelistview = new NoteListView(notelist);
+    notelistview.createView();
+    console.log(notelistview);
+    const noteid = notelistview._noteList.noteArray[0].id
+    assert.isTrue(noteid === 0);
+  }
+
   exports.testForExistanceOfText = testForExistanceOfText;
   exports.testForDisplayNote = testForDisplayNote;
   exports.testForCreateNewNote = testForCreateNewNote;
   exports.testForNoteListView = testForNoteListView;
   exports.testForNoteController = testForNoteController;
   exports.testForSingleNoteView = testForSingleNoteView;
+  exports.testForNoteId = testForNoteId;
 })(this);
 
 testForExistanceOfText();
@@ -100,4 +113,6 @@ counter++;
 testForNoteController();
 counter++;
 testForSingleNoteView();
+counter++;
+testForNoteId();
 counter++;
