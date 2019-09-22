@@ -52,7 +52,7 @@ counter++;
     noteListView._noteList.createNewNote("string 1");
     noteListView._noteList.createNewNote("string 2");
     const result = noteListView.createView();
-    assert.isTrue(result == "<ul><li><div class='text'>string 1</div></li><li><div class='text'>string 2</div></li></ul>");
+    assert.isTrue(result == "<ul><li><div class='text'><a href='#notes/0'>string 1</a></div></li><li><div class='text'><a href='#notes/1'>string 2</a></div></li></ul>");
   }
 
   function testForNoteController(){

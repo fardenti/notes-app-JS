@@ -4,7 +4,8 @@
   }
 
   NoteListView.prototype.createView = function(){
-    let array = (this._noteList.displayAllNotes().map(x => "<li><div class='text'>" + x._text + "</div></li>").join(""));
+    let array = (this._noteList.displayAllNotes().map(x => "<li><div class='text'><a href='#notes/" + x.id  + "'>" + x._text + "</a></div></li>").join(""));
+    console.log(array)
     let htmlArray = "<ul>" + array + "</ul>"
     return htmlArray
   }

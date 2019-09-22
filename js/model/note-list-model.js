@@ -12,7 +12,6 @@
     }
 
     NoteList.prototype.createNewNote = function(text){
-  
       this.noteArray.push(new Note(text));
     }
 
